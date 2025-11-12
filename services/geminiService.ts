@@ -1,7 +1,13 @@
 import { GoogleGenAI, Type, Modality } from "@google/genai";
 import { WhiteboardContent, LiveSegmentData } from '../types';
 
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+const apiKey = process.env.VITE_GEMINI_API_KEY || process.env.API_KEY || '';
+
+if (!apiKey) {
+  throw new Error('VITE_GEMINI_API_KEY environment variable is not set. Please configure it in your .env file.');
+}
+
+const ai = new GoogleGenAI({ apiKey });
 
 const whiteboardSchema = {
   type: Type.OBJECT,

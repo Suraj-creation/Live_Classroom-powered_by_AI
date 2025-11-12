@@ -94,7 +94,12 @@ export const LiveClassroom: React.FC = () => {
             const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
             streamRef.current = stream;
 
-            if (!aiRef.current) aiRef.current = new GoogleGenAI({ apiKey: process.env.API_KEY });
+            const apiKey = process.env.VITE_GEMINI_API_KEY || process.env.API_KEY;
+            if (!apiKey) {
+                throw new Error('VITE_GEMINI_API_KEY environment variable is not set.');
+            }
+
+            if (!aiRef.current) aiRef.current = new GoogleGenAI({ apiKey });
 
             const session = await aiRef.current.live.connect({
                 model: 'gemini-2.5-flash-native-audio-preview-09-2025',
