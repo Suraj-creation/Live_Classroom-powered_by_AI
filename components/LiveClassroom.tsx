@@ -175,7 +175,7 @@ export const LiveClassroom: React.FC = () => {
                 <button
                     onClick={isLive ? stopSession : startSession}
                     disabled={isConnecting}
-                    className={`w-20 h-20 rounded-full flex items-center justify-center transition-all duration-300 shadow-lg transform hover:scale-110 ${isLive ? 'bg-red-600 hover:bg-red-700' : 'bg-sky-500 hover:bg-sky-600'} disabled:bg-gray-600 disabled:scale-100`}
+                    className={`w-20 h-20 rounded-full flex items-center justify-center transition-all duration-300 shadow-xl transform hover:scale-105 ring-2 ${isLive ? 'bg-red-600 hover:bg-red-700 ring-red-400' : 'bg-sky-800 hover:bg-sky-700 ring-sky-600'} disabled:bg-gray-600 disabled:scale-100`}
                 >
                     {isConnecting ? (
                         <div className="w-8 h-8 border-2 border-dashed rounded-full animate-spin border-white"></div>
@@ -185,7 +185,7 @@ export const LiveClassroom: React.FC = () => {
                         <MicrophoneIcon className="w-10 h-10 text-white" />
                     )}
                 </button>
-                <p className="text-gray-400 mt-3 text-sm font-medium">
+                <p className="text-slate-300 mt-3 text-sm font-medium">
                     {isConnecting ? 'Connecting...' : isLive ? 'Session is Live' : 'Start Live Session'}
                 </p>
                 {error && <p className="mt-2 text-red-400 bg-red-900/50 border border-red-700 px-3 py-1 rounded-md text-sm">{error}</p>}
