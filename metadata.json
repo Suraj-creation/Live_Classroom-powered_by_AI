@@ -1,0 +1,7 @@
+{
+  "name": "ExplainBoard: AI-Powered Visual Learning Whiteboard",
+  "description": "An AI-based interactive whiteboard that dynamically explains any concept by generating visually rich, structured content with AI-generated images and diagrams. Export your learning board as PDF, PNG, or Markdown.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
