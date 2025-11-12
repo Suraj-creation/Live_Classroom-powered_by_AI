@@ -1,4 +1,5 @@
 export default {
+  darkMode: 'class',
   content: [
     "./index.html",
     "./index.tsx",
@@ -6,7 +7,12 @@ export default {
     "./components/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'dark-bg': '#111827',
+        'dark-primary': '#f3f4f6',
+      }
+    },
   },
   plugins: [],
 }
